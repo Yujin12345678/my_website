@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Yujin_Day2.css">
+</head>
+<body style="background-color: lightcyan;">  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <span style="font-size: 20px;"><a herf="index.html"></span>
+            <a href="index.html" class="navbar-brand">Yujin Jung</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="coding.html">Coding</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class = description>
+        <span style="font-weight: bold;"><h1 style="padding-top: 30px;">Coding Experiences</h1></span> 
+        <h2 id="welcome">Hello and welcome to my website!</h2>
+        <br>
+        <br>
+        <p>I knew how to do <span style="font-weight: bold;">Scratch</span> before this class.</p>
+        <p><img src="https://strapicms.s3.ap-south-1.amazonaws.com/Scratch_Course_Final_34c62e4332.png"width=229/></p>
+        <p>Now, I know how to do <span style="font-weight: bold;">python.</span></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"width=229/></p>
+        <p>I also know how to do <span style="font-weight: bold;">javascript, css and html.</span></p>
+        <p><img src="https://static.javatpoint.com/images/javascript/javascript_logo.png"width=229/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png"width=150/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png"width=200/></p>
+        <p>This website is made from<span style="font-weight: bold;"> javascript, css and html.</span></p>
+        <p><img src="https://images.inc.com/uploaded_files/image/1920x1080/getty_503426092_342208.jpg"width=229/></p>
+
+        <p><label for="name">What's your name? </label>
+        <input type="text" id="name" name="name"/>
+        <button id="button">Say Hi</button></p>
+    </div>
+
+   <script>
+      let button=document.getElementById("button");
+      console.log(button.innerHTML);
+      button.onclick=()=>
+      {
+        console.log(button.innerHTML)
+        let nameInput=document.getElementById("name")
+        let name=nameInput.value;
+        let welcomeMessage=document.getElementById("welcome");
+        welcomeMessage.innerHTML="Hello "+name+", welcome to my website!"
+        localStorage.setItem("name", name);
+       }
+
+       window.onload = () => 
+       {
+            if (localStorage.getItem("name") != null) 
+            {
+                let welcomeMessage = document.getElementById("welcome");
+                welcomeMessage.innerHTML = "Hello " + localStorage.getItem("name") + ", welcome to my website!";
+            }
+        }
+   </script>
+
+</body>
+</html>
