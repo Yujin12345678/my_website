@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Yujin_Day2.css">
+</head>
+<body style="background-color: lightcyan;">  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <span style="font-size: 20px;"><a herf="index.html"></span>
+            <a href="index.html" class="navbar-brand">Yujin Jung</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coding.html">Coding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class = description>
+        <span style="font-weight: bold;"><h1 style="padding-top: 30px;">Yujin Jung</h1></span> 
+        <h2 id="welcome">Hello and welcome to my website!</h2>
+        <br>
+        <br>
+        <p>My name is <span style="font-weight: bold;">Yujin Jung.</span></p> I am going into <span style="font-weight: bold;">7th grade</span> and my favorite subject is <span style="font-weight: bold;">language arts.</span> 
+        <p><img src="Yujin Pic.jpg"width=180/>
+        </p>Some of my hobbies are <span style="font-weight: bold;">swimming </span>and<span style="font-weight: bold;"> reading. </span>
+        <p><img src="https://sportengland-production-files.s3.eu-west-2.amazonaws.com/s3fs-public/2023-03/190418%20-%20008%20-%201266.jpg?VersionId=qYuhQpkq0b1u.p_3zXsvoTFhAAv.fWs_"width=300/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqwIXXwGPSuiJWedON-xC6yFQ2O-q47WWALQ&usqp=CAU"width=250/></p>
+        <p>My favorite food is<span style="font-weight: bold;"> pasta.</span></p> 
+        <p><img src="https://thedizzycook.com/wp-content/uploads/2019/12/Boursin-pasta-180x180.jpg"/></p>
+        I play<span style="font-weight: bold;"> tennis </span>and I take <span style="font-weight: bold;">art lessons </span>at the KCC.
+        <p><img src="https://www.bhf.org.uk/-/media/images/information-support/heart-matters/heart-matters/summer-2018/activity/tennis_racket_balls_ss_0618_noexp_620x400.jpg?rev=c18a71fbd05e4a91b4bbc40af01aafaa&hash=B6D9F53AC70899560495FC5D3205784Ds"width=250/>
+        <img src="https://artincontext.org/wp-content/uploads/2021/08/Types-of-Art.jpg"width=250/></p>
+        <p> I enjoy<span style="font-weight: bold;"> visiting different places</span> with my family too.</p>
+        <p><img src="https://media.self.com/photos/5f0885ffef7a10ffa6640daa/4:3/w_5240,h_3929,c_limit/travel_plane_corona.jpeg"width=229/></p>
+        
+        <p><label for="name">What's your name? </label>
+        <input type="text" id="name" name="name"/>
+        <button id="button">Say Hi</button></p>
+    </div>
+
+   <script>
+      let button=document.getElementById("button");
+      console.log(button.innerHTML);
+      button.onclick=()=>
+      {
+        console.log(button.innerHTML)
+        let nameInput=document.getElementById("name")
+        let name=nameInput.value;
+        let welcomeMessage=document.getElementById("welcome");
+        welcomeMessage.innerHTML="Hello "+name+", welcome to my website!"
+        localStorage.setItem("name", name);
+       }
+
+       window.onload = () => 
+       {
+            if (localStorage.getItem("name") != null) 
+            {
+                let welcomeMessage = document.getElementById("welcome");
+                welcomeMessage.innerHTML = "Hello " + localStorage.getItem("name") + ", welcome to my website!";
+            }
+        }
+   </script>
+
+</body>
+</html>
